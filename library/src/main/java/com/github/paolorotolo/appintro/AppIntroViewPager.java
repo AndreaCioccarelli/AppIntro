@@ -1,7 +1,7 @@
 package com.github.paolorotolo.appintro;
 
 import android.content.Context;
-import androidx.viewpager.widget.ViewPager;
+import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.animation.Interpolator;
@@ -40,7 +40,7 @@ public final class AppIntroViewPager extends ViewPager {
     }
 
     public void goToNextSlide() {
-        if (LayoutUtil.isRtl(getContext())) {
+        if (LayoutUtil.isRtl(getResources())) {
             setCurrentItem(getCurrentItem() - 1);
         } else {
             setCurrentItem(getCurrentItem() + 1);
@@ -49,7 +49,7 @@ public final class AppIntroViewPager extends ViewPager {
 
     public void goToPreviousSlide() {
         try {
-            if (LayoutUtil.isRtl(getContext())) {
+            if (LayoutUtil.isRtl(getResources())) {
                 setCurrentItem(getCurrentItem() + 1);
             } else {
                 setCurrentItem(getCurrentItem() - 1);
@@ -61,7 +61,7 @@ public final class AppIntroViewPager extends ViewPager {
     }
 
     public boolean isFirstSlide(int size) {
-        if (LayoutUtil.isRtl(getContext())) {
+        if (LayoutUtil.isRtl(getResources())) {
             return getCurrentItem() - size + 1 == 0;
         } else {
             return getCurrentItem() == 0;
@@ -198,7 +198,7 @@ public final class AppIntroViewPager extends ViewPager {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-        if (LayoutUtil.isRtl(getContext())) {
+        if (LayoutUtil.isRtl(getResources())) {
             return !result;
         } else {
             return result;

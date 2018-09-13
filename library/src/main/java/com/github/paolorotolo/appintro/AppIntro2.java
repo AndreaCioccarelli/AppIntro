@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import androidx.annotation.ColorInt;
+import android.support.annotation.ColorInt;
 import android.widget.LinearLayout;
 
 import com.github.paolorotolo.appintro.util.LogHelper;
@@ -28,7 +28,7 @@ public abstract class AppIntro2 extends AppIntroBase {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.appintro_intro_layout2;
+        return R.layout.intro_layout2;
     }
 
     /**

@@ -1,8 +1,8 @@
 package com.github.paolorotolo.appintro;
 
 import android.os.Bundle;
-import androidx.annotation.ColorInt;
-import androidx.annotation.DrawableRes;
+import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
 
 public final class AppIntro2Fragment extends AppIntroBaseFragment {
     public static AppIntroFragment newInstance(CharSequence title, CharSequence description,
@@ -58,6 +58,6 @@ public final class AppIntro2Fragment extends AppIntroBaseFragment {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.appintro_fragment_intro2;
+        return R.layout.fragment_intro2;
     }
 }

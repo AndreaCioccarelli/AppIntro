@@ -4,14 +4,14 @@ import android.animation.ArgbEvaluator;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
-import androidx.annotation.ColorRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.core.content.ContextCompat;
-import androidx.core.view.GestureDetectorCompat;
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.annotation.ColorRes;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.GestureDetectorCompat;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.KeyEvent;
@@ -972,7 +972,7 @@ public abstract class AppIntroBase extends AppCompatActivity implements
     }
 
     protected boolean isRtl() {
-        return LayoutUtil.isRtl(getApplicationContext());
+        return LayoutUtil.isRtl(getResources());
     }
 
     private final class NextButtonOnClickListener implements View.OnClickListener {

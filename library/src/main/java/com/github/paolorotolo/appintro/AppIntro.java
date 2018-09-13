@@ -1,8 +1,8 @@
 package com.github.paolorotolo.appintro;
 
 import android.graphics.drawable.Drawable;
-import androidx.annotation.ColorInt;
-import androidx.annotation.Nullable;
+import android.support.annotation.ColorInt;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -17,7 +17,7 @@ public abstract class AppIntro extends AppIntroBase {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.appintro_intro_layout;
+        return R.layout.intro_layout;
     }
 
     /**

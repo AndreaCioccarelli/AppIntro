@@ -2,8 +2,8 @@ package com.amqtech.opensource.appintroexample.ui.mainTabs.intro;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 
 import com.github.paolorotolo.appintro.AppIntro;
 import com.github.paolorotolo.appintro.AppIntroFragment;
@@ -25,7 +25,6 @@ public class DefaultIntro extends AppIntro {
         sliderPage1.setDescription("This is a demo of the AppIntro library.");
         sliderPage1.setImageDrawable(R.drawable.ic_slide1);
         sliderPage1.setBgColor(Color.TRANSPARENT);
-        sliderPage1.setBgDrawable(R.drawable.ic_slide1);
         addSlide(AppIntroFragment.newInstance(sliderPage1));
 
         SliderPage sliderPage2 = new SliderPage();
@@ -33,7 +32,6 @@ public class DefaultIntro extends AppIntro {
         sliderPage2.setDescription("This library offers developers the ability to add clean app intros at the start of their apps.");
         sliderPage2.setImageDrawable(R.drawable.ic_slide2);
         sliderPage2.setBgColor(Color.TRANSPARENT);
-        sliderPage2.setBgDrawable(R.drawable.ic_slide2);
         addSlide(AppIntroFragment.newInstance(sliderPage2));
 
         SliderPage sliderPage3 = new SliderPage();
@@ -41,7 +39,6 @@ public class DefaultIntro extends AppIntro {
         sliderPage3.setDescription("The library offers a lot of customization, while keeping it simple for those that like simple.");
         sliderPage3.setImageDrawable(R.drawable.ic_slide3);
         sliderPage3.setBgColor(Color.TRANSPARENT);
-        sliderPage3.setBgDrawable(R.drawable.ic_slide3);
         addSlide(AppIntroFragment.newInstance(sliderPage3));
 
         SliderPage sliderPage4 = new SliderPage();
@@ -49,7 +46,6 @@ public class DefaultIntro extends AppIntro {
         sliderPage4.setDescription("Feel free to explore the rest of the library demo!");
         sliderPage4.setImageDrawable(R.drawable.ic_slide4);
         sliderPage4.setBgColor(Color.TRANSPARENT);
-        sliderPage4.setBgDrawable(R.drawable.ic_slide4);
         addSlide(AppIntroFragment.newInstance(sliderPage4));
     }
 

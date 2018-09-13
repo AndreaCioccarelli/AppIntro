@@ -1,6 +1,6 @@
 package com.github.paolorotolo.appintro;
 
-import androidx.annotation.ColorInt;
+import android.support.annotation.ColorInt;
 
 public interface ISlideBackgroundColorHolder {
     /**

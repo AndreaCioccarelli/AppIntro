@@ -1,11 +1,11 @@
 package com.github.paolorotolo.appintro;
 
 import android.os.Bundle;
-import androidx.annotation.ColorInt;
-import androidx.annotation.LayoutRes;
-import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
+import android.support.annotation.ColorInt;
+import android.support.annotation.LayoutRes;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,14 +23,14 @@ public abstract class AppIntroBaseFragment extends Fragment implements ISlideSel
     protected static final String ARG_DESC = "desc";
     protected static final String ARG_DESC_TYPEFACE = "desc_typeface";
     protected static final String ARG_DRAWABLE = "drawable";
-    protected static final String ARG_DRAWABLE_BG = "drawable_BG";
+    protected static final String ARG_DRAWABLE_BG = "drawable_bg";
     protected static final String ARG_BG_COLOR = "bg_color";
     protected static final String ARG_TITLE_COLOR = "title_color";
     protected static final String ARG_DESC_COLOR = "desc_color";
 
     private static final String TAG = LogHelper.makeLogTag(AppIntroBaseFragment.class);
 
-    private int drawable, bgColor, bgDrawable, titleColor, descColor, layoutId;
+    private int drawable, bgDrawable, bgColor, titleColor, descColor, layoutId;
     private String title, titleTypeface, description, descTypeface;
 
     private LinearLayout mainLayout;
@@ -43,6 +43,7 @@ public abstract class AppIntroBaseFragment extends Fragment implements ISlideSel
 
         if (getArguments() != null && getArguments().size() != 0) {
             drawable = getArguments().getInt(ARG_DRAWABLE);
+            bgDrawable = getArguments().getInt(ARG_DRAWABLE_BG);
             title = getArguments().getString(ARG_TITLE);
             titleTypeface = getArguments().containsKey(ARG_TITLE_TYPEFACE) ?
                     getArguments().getString(ARG_TITLE_TYPEFACE) : "";
@@ -50,7 +51,6 @@ public abstract class AppIntroBaseFragment extends Fragment implements ISlideSel
             descTypeface = getArguments().containsKey(ARG_DESC_TYPEFACE) ?
                     getArguments().getString(ARG_DESC_TYPEFACE) : "";
             bgColor = getArguments().getInt(ARG_BG_COLOR);
-            bgDrawable = getArguments().getInt(ARG_DRAWABLE_BG);
             titleColor = getArguments().containsKey(ARG_TITLE_COLOR) ?
                     getArguments().getInt(ARG_TITLE_COLOR) : 0;
             descColor = getArguments().containsKey(ARG_DESC_COLOR) ?
@@ -64,12 +64,12 @@ public abstract class AppIntroBaseFragment extends Fragment implements ISlideSel
 
         if (savedInstanceState != null) {
             drawable = savedInstanceState.getInt(ARG_DRAWABLE);
+            bgDrawable = savedInstanceState.getInt(ARG_DRAWABLE_BG);
             title = savedInstanceState.getString(ARG_TITLE);
             titleTypeface = savedInstanceState.getString(ARG_TITLE_TYPEFACE);
             description = savedInstanceState.getString(ARG_DESC);
             descTypeface = savedInstanceState.getString(ARG_DESC_TYPEFACE);
             bgColor = savedInstanceState.getInt(ARG_BG_COLOR);
-            bgDrawable = savedInstanceState.getInt(ARG_DRAWABLE_BG);
             titleColor = savedInstanceState.getInt(ARG_TITLE_COLOR);
             descColor = savedInstanceState.getInt(ARG_DESC_COLOR);
         }
@@ -105,9 +105,6 @@ public abstract class AppIntroBaseFragment extends Fragment implements ISlideSel
             }
         }
         i.setImageResource(drawable);
-
-
-        mainLayout.setBackgroundColor(bgColor);
         mainLayout.setBackground(ContextCompat.getDrawable(getContext(), bgDrawable));
 
         return v;
