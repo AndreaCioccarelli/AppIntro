@@ -19,6 +19,9 @@ public class SliderPagerBuilder {
     @ColorInt
     private int bgColor;
 
+    @DrawableRes
+    private int bgDrawable;
+
     @ColorInt
     private int titleColor;
 
@@ -29,9 +32,7 @@ public class SliderPagerBuilder {
 
     private String descTypeface;
 
-    public SliderPagerBuilder(){
-
-    }
+    public SliderPagerBuilder() {}
 
     public SliderPagerBuilder title(CharSequence title){
 
@@ -56,6 +57,13 @@ public class SliderPagerBuilder {
         this.bgColor = bgColor;
         return this;
     }
+
+    public SliderPagerBuilder bgDrawable(int bgDrw){
+
+        this.bgDrawable = bgDrw;
+        return this;
+    }
+
 
     public SliderPagerBuilder titleColor(int titleColor){
 
@@ -88,6 +96,8 @@ public class SliderPagerBuilder {
         sliderPage.setDescription(this.description);
         sliderPage.setImageDrawable(this.imageDrawable);
         sliderPage.setBgColor(this.bgColor);
+        sliderPage.setBgDrawable(this.bgDrawable);
+
         sliderPage.setTitleColor(this.titleColor);
         sliderPage.setDescColor(this.descColor);
         sliderPage.setTitleTypeface(this.titleTypeface);

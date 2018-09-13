@@ -4,6 +4,7 @@ import android.os.Bundle;
 import androidx.annotation.ColorInt;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,13 +23,14 @@ public abstract class AppIntroBaseFragment extends Fragment implements ISlideSel
     protected static final String ARG_DESC = "desc";
     protected static final String ARG_DESC_TYPEFACE = "desc_typeface";
     protected static final String ARG_DRAWABLE = "drawable";
+    protected static final String ARG_DRAWABLE_BG = "drawable_BG";
     protected static final String ARG_BG_COLOR = "bg_color";
     protected static final String ARG_TITLE_COLOR = "title_color";
     protected static final String ARG_DESC_COLOR = "desc_color";
 
     private static final String TAG = LogHelper.makeLogTag(AppIntroBaseFragment.class);
 
-    private int drawable, bgColor, titleColor, descColor, layoutId;
+    private int drawable, bgColor, bgDrawable, titleColor, descColor, layoutId;
     private String title, titleTypeface, description, descTypeface;
 
     private LinearLayout mainLayout;
@@ -48,6 +50,7 @@ public abstract class AppIntroBaseFragment extends Fragment implements ISlideSel
             descTypeface = getArguments().containsKey(ARG_DESC_TYPEFACE) ?
                     getArguments().getString(ARG_DESC_TYPEFACE) : "";
             bgColor = getArguments().getInt(ARG_BG_COLOR);
+            bgDrawable = getArguments().getInt(ARG_DRAWABLE_BG);
             titleColor = getArguments().containsKey(ARG_TITLE_COLOR) ?
                     getArguments().getInt(ARG_TITLE_COLOR) : 0;
             descColor = getArguments().containsKey(ARG_DESC_COLOR) ?
@@ -66,6 +69,7 @@ public abstract class AppIntroBaseFragment extends Fragment implements ISlideSel
             description = savedInstanceState.getString(ARG_DESC);
             descTypeface = savedInstanceState.getString(ARG_DESC_TYPEFACE);
             bgColor = savedInstanceState.getInt(ARG_BG_COLOR);
+            bgDrawable = savedInstanceState.getInt(ARG_DRAWABLE_BG);
             titleColor = savedInstanceState.getInt(ARG_TITLE_COLOR);
             descColor = savedInstanceState.getInt(ARG_DESC_COLOR);
         }
@@ -101,7 +105,10 @@ public abstract class AppIntroBaseFragment extends Fragment implements ISlideSel
             }
         }
         i.setImageResource(drawable);
+
+
         mainLayout.setBackgroundColor(bgColor);
+        mainLayout.setBackground(ContextCompat.getDrawable(getContext(), bgDrawable));
 
         return v;
     }
@@ -109,6 +116,7 @@ public abstract class AppIntroBaseFragment extends Fragment implements ISlideSel
     @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putInt(ARG_DRAWABLE, drawable);
+        outState.putInt(ARG_DRAWABLE_BG, bgDrawable);
         outState.putString(ARG_TITLE, title);
         outState.putString(ARG_DESC, description);
         outState.putInt(ARG_BG_COLOR, bgColor);

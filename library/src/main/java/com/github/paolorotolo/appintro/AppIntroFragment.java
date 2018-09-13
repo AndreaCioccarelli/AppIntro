@@ -1,5 +1,6 @@
 package com.github.paolorotolo.appintro;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
@@ -13,8 +14,9 @@ public final class AppIntroFragment extends AppIntroBaseFragment {
      */
     public static AppIntroFragment newInstance(CharSequence title, CharSequence description,
                                                @DrawableRes int imageDrawable,
-                                               @ColorInt int bgColor) {
-        return newInstance(title, null, description, null, imageDrawable, bgColor, 0, 0);
+                                               @ColorInt int bgColor,
+                                               @DrawableRes int bgDrawable) {
+        return newInstance(title, null, description, null, imageDrawable, bgColor, bgDrawable, 0, 0);
     }
 
     /**
@@ -23,14 +25,16 @@ public final class AppIntroFragment extends AppIntroBaseFragment {
     public static AppIntroFragment newInstance(CharSequence title, String titleTypeface,
                                                CharSequence description, String descTypeface,
                                                @DrawableRes int imageDrawable,
-                                               @ColorInt int bgColor) {
-        return newInstance(title, titleTypeface, description, descTypeface, imageDrawable, bgColor,
+                                               @ColorInt int bgColor,
+                                               @DrawableRes int bgDrawable) {
+        return newInstance(title, titleTypeface, description, descTypeface, imageDrawable, bgColor, bgDrawable,
                 0, 0);
     }
 
     public static AppIntroFragment newInstance(CharSequence title, String titleTypeface,
                                                CharSequence description, String descTypeface,
                                                @DrawableRes int imageDrawable, @ColorInt int bgColor,
+                                               @DrawableRes int bgDrawable,
                                                @ColorInt int titleColor, @ColorInt int descColor) {
         SliderPage sliderPage = new SliderPage();
         sliderPage.setTitle(title);
@@ -38,7 +42,9 @@ public final class AppIntroFragment extends AppIntroBaseFragment {
         sliderPage.setDescription(description);
         sliderPage.setDescTypeface(descTypeface);
         sliderPage.setImageDrawable(imageDrawable);
+        sliderPage.setBgDrawable(bgDrawable);
         sliderPage.setBgColor(bgColor);
+
         sliderPage.setTitleColor(titleColor);
         sliderPage.setDescColor(descColor);
 
@@ -53,6 +59,7 @@ public final class AppIntroFragment extends AppIntroBaseFragment {
         args.putString(ARG_DESC, sliderPage.getDescriptionString());
         args.putString(ARG_DESC_TYPEFACE, sliderPage.getDescTypeface());
         args.putInt(ARG_DRAWABLE, sliderPage.getImageDrawable());
+        args.putInt(ARG_DRAWABLE_BG, sliderPage.getBgDrawable());
         args.putInt(ARG_BG_COLOR, sliderPage.getBgColor());
         args.putInt(ARG_TITLE_COLOR, sliderPage.getTitleColor());
         args.putInt(ARG_DESC_COLOR, sliderPage.getDescColor());

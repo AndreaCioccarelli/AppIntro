@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'maven'
-apply plugin: 'signing'
-apply from: 'maven-push.gradle'
+
+group = 'com.github.AndreaCioccarelli'
 
 android {
     compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 19
         targetSdkVersion 27
         versionCode 14
         versionName "5.0.0"

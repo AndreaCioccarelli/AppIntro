@@ -21,6 +21,7 @@ public class SliderPageBuilderTest {
         CharSequence description = "Description";
         int imageDrawable = 0x7f020000;
         int bgColor = Color.GRAY;
+        int bgDrawable = 0x7f020000;
         int titleColor = Color.WHITE;
         int descColor = Color.BLACK;
         String titleTypeface = "robotobold.ttf";
@@ -31,6 +32,7 @@ public class SliderPageBuilderTest {
                 .description(description)
                 .imageDrawable(imageDrawable)
                 .bgColor(bgColor)
+                .bgDrawable(bgDrawable)
                 .titleColor(titleColor)
                 .descColor(descColor)
                 .titleTypeface(titleTypeface)

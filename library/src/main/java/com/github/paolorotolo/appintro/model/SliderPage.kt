@@ -1,5 +1,6 @@
 package com.github.paolorotolo.appintro.model
 
+import android.graphics.drawable.Drawable
 import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
 
@@ -11,6 +12,7 @@ data class SliderPage @JvmOverloads constructor(
         var description: CharSequence? = null,
         @DrawableRes var imageDrawable: Int = 0,
         @ColorInt var bgColor: Int = 0,
+        @DrawableRes var bgDrawable: Int = 0,
         @ColorInt var titleColor: Int = 0,
         @ColorInt var descColor: Int = 0,
         var titleTypeface: String? = null,
