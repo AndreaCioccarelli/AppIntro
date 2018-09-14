@@ -105,9 +105,12 @@ public abstract class AppIntroBaseFragment extends Fragment implements ISlideSel
             }
         }
         i.setImageResource(drawable);
-        i.setMaxHeight(128);
-        i.setMaxWidth(128);
-        mainLayout.setBackground(ContextCompat.getDrawable(getContext(), bgDrawable));
+
+        if (bgDrawable != 0x0) {
+            mainLayout.setBackground(ContextCompat.getDrawable(getContext(), bgDrawable));
+        } else {
+            mainLayout.setBackgroundColor(bgColor);
+        }
 
         return v;
     }
